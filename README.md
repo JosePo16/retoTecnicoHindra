@@ -11,6 +11,47 @@ Aplicación API HTTP con Node.js ejecutándose en AWS Lambda y API Gateway utili
 * Fecha Desarrollo: 04/04/2024
 * Desarrollador: José Gabriel Ponte Sagastegui
 
+### Explicación
+* Invoke the endpoint to start registering favorites:
+```
+  POST - https://waanrj5x37.execute-api.sa-east-1.amazonaws.com/favorites
+```
+
+* Use the following scheme
+
+```
+}
+    "type": "",
+    "name": "",
+    "gender": "",
+    "homeworld": "",
+    "species": "",
+    "vehicles": "",
+    "starships": "",
+    "description": "my first favorite"
+}
+```
+
+* You don't need to assign a value to all fields, I can insert like this:
+```
+{
+    "type": "People",
+    "name": "Tatooine",
+    "species": "droip",
+    "homeworld": "Naboo",
+    "description": "mi primer favorito",
+}
+```
+
+or 
+```
+{
+    "name": "Tatooine",
+    "species": "droip",
+    "description": "mi primer favorito",
+}
+```
+The only required field is description.
 ### Deployment
 
 ```
