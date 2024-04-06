@@ -1,0 +1,37 @@
+service: reto-node-serverless
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: sa-east-1
+  # stage: dev
+  environment:
+    # FAVORITE_TABLE: ${self:custom.FAVORITE_TABLE.${self:custom.stage}}
+    FAVORITE_TABLE: favoritesTable
+    URL_BASE_SWAPI: https://swapi.py4e.com/api
+    URL: https://waanrj5x37.execute-api.sa-east-1.amazonaws.com/
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - arn:aws:dynamodb:sa-east-1:*:table/favoritesTable
+
+# custom:
+#   stage: ${opt:stage, self:provider.stage}
+#   FAVORITE_TABLE:
+#     dev: favoriteDevTable
+#     prod: favorite-prod-table
+
+functions: ${file(app/yml/functions.yml)}
+
+resources: ${file(app/yml/dynamodb.yml)}
+
+plugins:
+  - serverless-offline

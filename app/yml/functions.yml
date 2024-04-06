@@ -1,0 +1,78 @@
+createFavorite:
+  handler: app/functions/favorites/createFavorite.saveFavorite
+  events:
+    - httpApi:
+        path: /favorites
+        method: post
+
+getFavorites:
+  handler: app/functions/favorites/getFavoritesAll.getFavoritesAll
+  events:
+    - httpApi:
+        path: /favorites
+        method: get
+
+getFavorite:
+  handler: app/functions/favorites/getFavoriteById.getFavoriteById
+  events:
+    - httpApi:
+        path: /favorites/{id}
+        method: get
+
+updateFavorite:
+  handler: app/functions/favorites/updateFavorite.updateFavorite
+  events:
+    - httpApi:
+        path: /favorites/{id}
+        method: put
+
+deleteFavorite:
+  handler: app/functions/favorites/deleteFavorite.deleteFavorite
+  events:
+    - httpApi:
+        path: /favorites/{id}
+        method: delete
+
+
+
+getSwapiFilms:
+  handler: app/functions/swapi/getFilms.getFilms
+  events:
+    - httpApi:
+        path: /swapi/films
+        method: get
+
+getSwapiPeople:
+  handler: app/functions/swapi/getPeople.getPeople
+  events:
+    - httpApi:
+        path: /swapi/people
+        method: get
+
+getSwapiPlanets:
+  handler: app/functions/swapi/getPlanets.getPlanets
+  events:
+    - httpApi:
+        path: /swapi/planets
+        method: get
+
+getSwapiSpecies:
+  handler: app/functions/swapi/getSpecies.getSpecies
+  events:
+    - httpApi:
+        path: /swapi/species
+        method: get
+
+getSwapiStarships:
+  handler: app/functions/swapi/getStarships.getStarships
+  events:
+    - httpApi:
+        path: /swapi/startship
+        method: get
+
+getSwapiVehicles:
+  handler: app/functions/swapi/getVehicles.getVehicles
+  events:
+    - httpApi:
+        path: /swapi/vehicles
+        method: get
