@@ -3,7 +3,7 @@
 
 Aplicación API HTTP con Node.js ejecutándose en AWS Lambda y API Gateway utilizando Serverless Framework con conexión a DynamoDB.
 
-### Información
+### Information
 * Serverless: v3
 * Plataforma: AWS
 * Lenguaje: javascript (nodeJS v18)
@@ -11,7 +11,7 @@ Aplicación API HTTP con Node.js ejecutándose en AWS Lambda y API Gateway utili
 * Fecha Desarrollo: 04/04/2024
 * Desarrollador: José Gabriel Ponte Sagastegui
 
-### Explicación
+### explanation
 * Invoke the endpoint to start registering favorites:
 ```
   POST - https://waanrj5x37.execute-api.sa-east-1.amazonaws.com/favorites
